@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surpresinha pra Você 💖</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe6f0;
+      color: #d63384;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+
+    .heart {
+      width: 80px;
+      height: 80px;
+      background-color: #ff4d88;
+      clip-path: polygon(
+        50% 0%,
+        100% 35%,
+        80% 100%,
+        50% 80%,
+        20% 100%,
+        0% 35%
+      );
+      margin: 30px auto;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    #playMusicBtn {
+      display: none;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    #playMusicBtn:hover {
+      background-color: #ad2671;
+    }
+
+    #message {
+      display: none;
+      font-size: 1.3em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Oi, coisa linda 💕</h1>
+  <p>Clique no coração para desbloquear uma surpresa 💝</p>
+
+  <div class="heart" onclick="revealSurprise()"></div>
+
+  <div id="message">Você encontrou meu coração 🥹 Agora, essa música é pra você:</div>
+
+  <button id="playMusicBtn" onclick="goToMusic()">Ouvir Música 🎶</button>
+
+  <script>
+    function revealSurprise() {
+      document.querySelector('.heart').style.display = 'none';
+      document.getElementById('message').style.display = 'block';
+      document.getElementById('playMusicBtn').style.display = 'inline-block';
+    }
+
+    function goToMusic() {
+      window.location.href = 'https://www.youtube.com/watch?v=aBpvFwtN9Ds';
+    }
+  </script>
+
+</body>
+</html>
